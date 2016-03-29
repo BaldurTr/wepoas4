@@ -4,7 +4,8 @@
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: blue;
+	background: black;
+	-webkit-transition: -webkit-transform 0.3s;
 }
 
 .Scoreboard {
