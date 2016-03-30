@@ -27,7 +27,7 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.keys.space && Controls.didJump()) {
-			this.pos.y -= 20;
+			this.pos.y -= 15;
 		} else {
 			this.pos.y += delta * SPEED * (0.5);
 		}

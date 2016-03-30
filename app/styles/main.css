@@ -1,11 +1,24 @@
+@-webkit-keyframes animBird {
+   from { background-position: 0px 0px; }
+   to { background-position: 0px -96px; }
+}
+
 .Player {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: black;
-	-webkit-transition: -webkit-transform 0.3s;
+	background: url('../images/bird1.png');
+	-webkit-transition: -webkit-transform 0.2s;
+}
+
+.Ground {
+	position: absolute;
+	bottom: 0;
+	width: 110em;
+	height: 5em;
+	background: url('../images/land.png');
 }
 
 .Scoreboard {
