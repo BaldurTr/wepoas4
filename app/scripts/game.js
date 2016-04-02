@@ -4,12 +4,15 @@ window.Game = (function() {
 
 	/**
 	 * Main game class.
-	 * @param {Element} el jQuery element containing the game.
+	 * @param {Element} el jQuery element containing the game.  
 	 * @constructor
 	 */
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
+		this.ground = new window.Ground(this.el.find('.Ground'), this);
+		this.pipe1 = new window.Pipes(this.el.find('.Pipe-bottom'), this, 1);
+		this.pipe2 = new window.Pipes(this.el.find('.Pipe-top'), this, 2);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -33,6 +36,9 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
+		this.ground.onFrame(delta);
+		this.pipe1.onFrame(delta);
+		this.pipe2.onFrame(delta);
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -55,6 +61,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
+		this.pipe1.reset();
+		this.pipe2.reset();
+		this.ground.reset();
 	};
 
 	/**
@@ -78,8 +87,8 @@ window.Game = (function() {
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH = 102.4;
-	Game.prototype.WORLD_HEIGHT = 57.6;
+	Game.prototype.WORLD_WIDTH = 48.0;
+	Game.prototype.WORLD_HEIGHT = 64.0;
 
 	return Game;
 })();
