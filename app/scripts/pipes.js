@@ -8,10 +8,12 @@ window.Pipes = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 100;
 	var INITIAL_POSITION_Y = 0;
+	var GAP = 15;
 
 	var Pipes = function(el, game, pipe) {
 		this.el = el;
 		this.game = game;
+		this.player = game.player;
 		this.pos = { x: 0, y: 0 };
 		this.pipe = pipe; 
 	};
@@ -20,7 +22,11 @@ window.Pipes = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Pipes.prototype.reset = function() {
-		this.pos.x = INITIAL_POSITION_X;
+		if (this.pipe === 1) {
+			this.pos.x = INITIAL_POSITION_X;
+		} else {
+			this.pos.x = INITIAL_POSITION_X + WIDTH;
+		}
 		this.pos.y = INITIAL_POSITION_Y;
 	};
 
