@@ -18,7 +18,9 @@
 	height: 7em;
 	background-image: url('../images/bird2.png');
 	background-size: cover;
-	-webkit-transition: -webkit-transform 0.05s;
+	-webkit-transition: -webkit-transform 0.1s;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 .Wings {
@@ -31,7 +33,7 @@
 	background-repeat: no-repeat;
 	background-size: 2.5em, 2.5em;
 	-webkit-transform-origin: 10% 8%;
-	-webkit-animation: flap 0.4s linear infinite;
+	-webkit-animation: flap 0.2s linear infinite;
 
 }
 
@@ -41,6 +43,8 @@
 	width: 180em;
 	height: 10em;
 	background: url('../images/land.png');
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 .P1-btm, .P2-btm {
@@ -48,11 +52,12 @@
 	bottom: 0;
 	right: 0;
 	width: 10em;
-	height: 28em;
+	height: 55em;
 	background-size: cover;
 	background-image: url('../images/pipeUp.png');
-	background-repeat: no-repeat;
+	background-repeat: no-repeat, repeat-y;
 	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 .P1-top, .P2-top {
@@ -60,12 +65,13 @@
 	top: 0;
 	right: 0;
 	width: 10em;
-	height: 28em;
+	height: 47em;
 	background-image: url('../images/pipeDown.png');
 	background-position: left bottom;
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat, repeat-y;
 	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 .Scoreboard {
@@ -82,9 +88,24 @@
 	-webkit-transition: -webkit-transform 0.5s;
 }
 
+.Scoreboard-Score {
+	margin-top: 2em;
+	font-size: 10em;
+	color: black;
+}
+
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
+.mute-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 8em;
+	height: 8em;
+	cursor: pointer;
+}
+
 .Scoreboard.is-visible {
 	-webkit-transform: none;
 }
@@ -121,5 +142,6 @@ height: 64.0em;
 margin-left: -25.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+background-image: url('../images/bg.png');
+background-position: 20% 38%;
 }

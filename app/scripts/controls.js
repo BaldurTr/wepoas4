@@ -13,6 +13,8 @@ window.Controls = (function() {
         40: 'down'
     };
 
+    var isMuted = false;
+
     /**
      * A singleton class which abstracts all player input,
      * should hide complexity of dealing with keyboard, mouse
@@ -57,6 +59,17 @@ window.Controls = (function() {
         this._didJump = false;
         return answer;
     };
+
+    $('.mute-btn').on('click',function(){
+        if(isMuted){
+            isMuted = false;
+            $('#music').trigger('play');
+        }
+        else{
+            isMuted = true;
+            $('#music').trigger('pause');
+        }
+    });
     
     // Export singleton.
     return new Controls();

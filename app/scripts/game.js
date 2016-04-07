@@ -11,8 +11,8 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
-		this.pipe1 = new window.Pipes(this.el.find('.Pipe-bottom'), this, 1);
-		this.pipe2 = new window.Pipes(this.el.find('.Pipe-top'), this, 2);
+		this.pipe1 = new window.Pipes(this.el.find('.P1-btm'), this.el.find('.P1-top'), this, 1);
+		this.pipe2 = new window.Pipes(this.el.find('.P2-btm'), this.el.find('.P2-top'), this, 2);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -70,7 +70,7 @@ window.Game = (function() {
 	 * Signals that the game is over.
 	 */
 	Game.prototype.gameover = function() {
-		this.isPlaying = false;
+		this.isPlaying = false; 
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;

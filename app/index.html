@@ -16,6 +16,8 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        <audio class="bgMusic" id="music" src="sound/17-wily-stage-1-2.mp3" type="audio/mpeg" autoplay loop></audio>
+        <audio class="wingFlap" id="flap" src="sound/sfx_wing.mp3" type="audio/mpeg"></audio>
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
@@ -28,19 +30,20 @@
             <div class="Player">
                 <div class="Wings"></div>
             </div>
-            
+            <div class="P1-top"></div>
+            <div class="P1-btm"></div>
+            <div class="P2-top"></div>
+            <div class="P2-btm"></div>
+            <div class="Ground"></div>
             <div class="Scoreboard">
+                <div class="Scoreboard-score">Score: <span class="Score"></span></div>
                 <button class="Scoreboard-restart">
                     <span class="Scoreboard-restartText">Restart</span>
                 </button>
             </div>
-            <div class="Pipes">
-                <div class="Pipe P1-top"></div>
-                <div class="Pipe P1-btm"></div>
-                <div class="Pipe P2-top"></div>
-                <div class="Pipe P2-btm"></div>
+            <div class="Muter">
+                <img src='images/sound.png' class='mute-btn'></img>
             </div>
-            <div class="Ground"></div>
         </div>
 
         <!-- build:js scripts/vendor.js -->
@@ -58,5 +61,5 @@
         <script src="scripts/pipes.js"></script>
         <script src="scripts/utils.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>
